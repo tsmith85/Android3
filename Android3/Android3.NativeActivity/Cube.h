@@ -16,6 +16,7 @@ public:
 	float getAngle_x();
 	float getAngle_y();
 	void rotateCubeEvent(float x, float y);
+	void cubeSelectEvent();
 	void draw(GLfloat colors[][4], float position[3]);
 };
 

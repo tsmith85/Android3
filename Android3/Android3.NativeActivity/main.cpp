@@ -27,6 +27,7 @@
 */
 Cube *cube1 = new Cube();
 Cube *cube2 = new Cube();
+Cube *cube3 = new Cube();
 
 static int engine_init_display(struct engine* engine) {
 	// initialize OpenGL ES and EGL
@@ -148,6 +149,10 @@ static void engine_draw_frame(struct engine* engine) {
 
 	cube1->draw(colors, position);
 	cube2->draw(colors1, position1);
+	
+	float position2[] = { 0.0f, 4.0f, -6.0f };
+
+	cube3->draw(colors, position2);
 
 	/*Laser *laser1 = new Laser();
 
@@ -183,9 +188,13 @@ static int32_t engine_handle_input(struct android_app* app, AInputEvent* event) 
 	struct engine* engine = (struct engine*)app->userData;
 	if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
 		engine->state.x = AMotionEvent_getX(event, 0);
-		engine->state.y = AMotionEvent_getY(event, 0);
+		engine->state.y = AMotionEvent_getY(event, 0);	
+
+		cube3->rotateCubeEvent(AMotionEvent_getY(event, 0), AMotionEvent_getX(event, 0));
+
 		return 1;
 	}
+
 	return 0;
 }
 

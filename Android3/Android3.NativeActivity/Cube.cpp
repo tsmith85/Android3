@@ -27,6 +27,11 @@ void Cube::rotateCubeEvent(float x, float y)
 	Cube::angle_y = y + 1.01f;
 }
 
+void Cube::cubeSelectEvent()
+{
+
+}
+
 void Cube::draw(GLfloat colors[][4], float position[3])
 {
 /*	GLint vertices[][3] =
