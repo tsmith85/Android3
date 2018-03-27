@@ -20,7 +20,7 @@
 
 #include "engine.h"
 #include "Cube.h"
-#include "Laser.h";
+#include "Laser.h"
 #include <vector>
 /**
 * Initialize an EGL context for the current display.
